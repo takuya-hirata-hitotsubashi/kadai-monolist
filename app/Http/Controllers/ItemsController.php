@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Item;
+
 class ItemsController extends Controller
 {
     /**
@@ -72,16 +74,20 @@ class ItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
     public function show($id)
     {
-        $item = Item::find($id);
+      $item = Item::find($id);
       $want_users = $item->want_users;
+      $have_users = $item->have_users;
 
       return view('items.show', [
           'item' => $item,
           'want_users' => $want_users,
+          'have_users' => $have_users,
       ]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

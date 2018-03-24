@@ -13,6 +13,7 @@
                         <div class="buttons text-center">
                             @if (Auth::check())
                                 @include('items.want_button', ['item' => $item])
+                                @include('items.have_button', ['item' => $item])
                             @endif
                         </div>
                     </div>
@@ -41,7 +42,7 @@
                     <div class="panel-body">
                     </div>
                 </div>
-            </div>
+            </div>-->
             <p class="text-center"><a href="{{ $item->url }}" target="_blank">楽天詳細ページへ</a></p>
         </div>
     </div>
